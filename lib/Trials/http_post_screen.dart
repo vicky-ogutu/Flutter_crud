@@ -60,6 +60,17 @@ Widget postButton(){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Post news"),
+      ),
+
+      body: Column(
+        children: [
+          _buildTextField(controller: title, hint: "Enter title"),
+          SizedBox(height:10),
+
+        ],
+      ),
 
     );
   }
