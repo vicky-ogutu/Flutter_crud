@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crud_app/Trials/http_post_screen.dart';
 import 'package:flutter_crud_app/api_post_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: post_screen(),
+      //home: post_screen(),
+      home: PostData(),
     );
   }
 }
