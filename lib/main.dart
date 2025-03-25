@@ -41,7 +41,8 @@ class post_screen  extends ConsumerWidget {
             itemBuilder: (context, index){
              final user =Posts[index];
               return ListTile(
-               title: Text(user.title)
+               title: Text(user.title),
+                subtitle: Text(user.body),
               );
 
             });
