@@ -2,6 +2,7 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart'as http;
 
 class PostData extends StatefulWidget {
@@ -24,13 +25,15 @@ class _PostDataState extends State<PostData> {
     try{
        final response =await http.post(Uri.parse(baseUrl),
        headers: {"Content-Type":"application/json"},
-       body: jsonEncode(post_data)  
+       body: jsonEncode(post_data)
        );
 
-
-
     }catch(Error){
-      print(Error.toString());
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Cannot post data"))
+      );
+
+      //print(Error.toString());
 
     }
    // return;
