@@ -53,6 +53,10 @@ Widget _buildTextField({required TextEditingController controller, required Stri
 
 }
 
+Widget postButton(){
+    return ElevatedButton(onPressed: postUser, child: Text("Submit"));
+}
+
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
