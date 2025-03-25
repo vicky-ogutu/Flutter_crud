@@ -30,11 +30,13 @@ class _PostDataState extends State<PostData> {
 
        if(response.statusCode==201){
          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("posted succesful")));
+       }else{
+         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error try again")));
        }
 
     }catch(Error){
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Cannot post data"))
+        SnackBar(content: Text("Error: $Error"))
       );
 
       //print(Error.toString());
