@@ -68,6 +68,8 @@ Widget postButton(){
         children: [
           _buildTextField(controller: title, hint: "Enter title"),
           SizedBox(height:10),
+          _buildTextField(controller: body, hint: "Enter body")
+          //SizedBox(height: 10),
 
         ],
       ),
