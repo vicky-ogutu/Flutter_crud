@@ -39,11 +39,19 @@ class _PostDataState extends State<PostData> {
         SnackBar(content: Text("Error: $Error"))
       );
 
-      //print(Error.toString());
-
     }
-   // return;
   }
+
+Widget _buildTextField({required TextEditingController controller, required String hint}) {
+    return TextField(
+        controller: controller,
+        decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: TextStyle(color: Colors.blue);
+      )
+    );
+
+}
 
   @override
   Widget build(BuildContext context) {
