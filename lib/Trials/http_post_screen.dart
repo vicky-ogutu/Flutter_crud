@@ -47,7 +47,7 @@ Widget _buildTextField({required TextEditingController controller, required Stri
         controller: controller,
         decoration: InputDecoration(
         hintText: hint,
-        hintStyle: TextStyle(color: Colors.blue);
+        hintStyle: TextStyle(color: Colors.blue),
       )
     );
 
