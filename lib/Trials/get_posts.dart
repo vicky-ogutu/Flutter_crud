@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
@@ -24,6 +25,7 @@ class _GetpostsState extends State<Getposts> {
     try{
       final response = await http.get(Uri.parse(baseURL));
       if(response.statusCode==200){
+        List<dynamic> jsonPosts = jsonDecode(response.body);
 
       }
 
