@@ -22,15 +22,14 @@ class _GetpostsState extends State<Getposts> {
 
   Future<List<Post>> getPosts() async{
     final String baseURL ="https://jsonplaceholder.typicode.com/posts";
-    try{
+
       final response = await http.get(Uri.parse(baseURL));
-      if(response.statusCode==200){
+      if(response.statusCode==200) {
         List<dynamic> jsonPosts = jsonDecode(response.body);
-
-      }
-
-    }catch(Error){
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Netork error: $Error")));
+        return jsonPosts.map((json) => Post.fromJson(json)).toList();
+      }else{
+      throw Exception("Cannot fetch posts");
+      //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Netork error: $Error")));
 
     }
 
