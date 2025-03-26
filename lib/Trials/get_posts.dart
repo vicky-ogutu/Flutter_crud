@@ -27,6 +27,8 @@ class _GetpostsState extends State<Getposts> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("List of Posts")),
+
+
     );
   }
 
@@ -41,6 +43,21 @@ class _GetpostsState extends State<Getposts> {
       throw Exception("Cannot fetch posts");
 
     }
+  }
+
+  Widget showList(List<Post> posts){
+    return ListView.builder(
+       itemCount: posts.length,
+        itemBuilder: (context, index){
+
+         final post = posts[index];
+         return ListTile(
+           title: Text(post.title),
+           subtitle: Text(post.body),
+
+         );
+        }
+    );
 
   }
 }
