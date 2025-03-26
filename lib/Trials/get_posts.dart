@@ -14,10 +14,20 @@ class Getposts extends StatefulWidget {
 }
 
 class _GetpostsState extends State<Getposts> {
+  late Future<List<Post>> futurePosts;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    futurePosts= getPosts();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: Text("List of Posts")),
+    );
   }
 
   Future<List<Post>> getPosts() async{
@@ -29,7 +39,6 @@ class _GetpostsState extends State<Getposts> {
         return jsonPosts.map((json) => Post.fromJson(json)).toList();
       }else{
       throw Exception("Cannot fetch posts");
-      //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Netork error: $Error")));
 
     }
 
