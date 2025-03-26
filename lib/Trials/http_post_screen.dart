@@ -64,6 +64,7 @@ Widget postButton(){
         title: Text("Post news"),
       ),
 
+
       body: Column(
         children: [
           _buildTextField(controller: title, hint: "Enter title"),
