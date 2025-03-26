@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_crud_app/post.dart';
 
 class Getposts extends StatefulWidget {
@@ -16,6 +17,13 @@ class _GetpostsState extends State<Getposts> {
   }
 
   Future<List<Post>> getPosts(){
+    final String baseURL ="https://jsonplaceholder.typicode.com/posts";
+    try{
+
+    }catch(Error){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Netork error: $Error")));
+
+    }
 
   }
 }
