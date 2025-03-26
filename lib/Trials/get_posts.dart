@@ -28,6 +28,23 @@ class _GetpostsState extends State<Getposts> {
     return Scaffold(
       appBar: AppBar(title: Text("List of Posts")),
 
+      body: Center(
+        child: FutureBuilder<List<Post>>(
+          future: futurePosts,
+          builder: (context, snapshot){
+
+            if(snapshot.hasData){
+              final posts = snapshot.data!;
+              return showList(posts);
+            }else{
+              throw Exception("No data");
+            }
+          },
+
+
+        ),
+      ),
+
 
     );
   }
